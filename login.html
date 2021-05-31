@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Page</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container{
+        height: 100%;
+        width: 100vw;
+    }
+    .login-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 50vh;
+        width: 26vw;
+        transform: translate(-50%,-50%);
+        border: solid 2px red;
+        background-color: antiquewhite;
+    }
+    .login-box:hover{
+        box-shadow: rgb(143, 143, 141) 3px 4px 10px;
+    }
+    h2{
+text-align: center;
+margin-top: 5px;
+    }
+
+input{
+    outline: none;
+    border: none;
+    width: 23vw;
+    margin:10px  1.4vw;
+padding: 4px 10px;
+}
+input:focus{
+    background-color: rgb(188, 197, 202);
+    border-radius:7px;
+}
+button{
+    height: 20px;
+    width: 19vw;
+    border-radius: 40px;
+    display: block;
+    margin:auto;
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+button:hover{
+    background-color: rgb(75, 185, 71);
+}
+</style>
+<body>
+<div class="container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form method="POST" name="myForm">
+        <input type="text" id="email" placeholder="Enter Email..." class="email">
+      <br>
+        <input type="password" placeholder="Enter Password..." id="password" class="password">
+        </form>
+        <button class="btn"><a href="./menu.html" class="a">login</a></button>
+    </div>
+</div>
+<script>
+    
+    var btn = document.querySelector(".btn");
+    btn.addEventListener("click", login);
+
+    function login(){
+    var email= document.forms["myForm"]["email"].value;
+    var password = document.forms["myForm"]["password"].value;
+    var link = document.querySelector("a");
+
+    if(password==""|| email==""){
+        alert("Don't keep any field blank!"); 
+        return false;
+    }else{
+        link.getAttribute("href");
+        link.setAttribute("href", "./menu.html");
+    alert("You are heading home page");
+}
+}
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forms.css">
+    <title>Form</title>
+</head>
+<body>
+    <h1>FEEDBACK FORM</h1>
+
+<div class="container">
+    <form method="POST" name="myForm">
+    <label for="t1">  <b> Name*</b></label><br>
+    <input type="text" id="fname" placeholder="First Name"> &nbsp;&nbsp;
+    <input type="text" required placeholder="Last Name"  id="lname"><br><br>
+    <label for=""> <b> Email Id*</b></label><br>
+    <input type="text" name="" placeholder="example@example.com" id="email"><br><br>
+    
+    
+    <label for=""> <b>Feedback type*</b></label><br> 
+    <!-- set name to coding to avoid multiple selection -->
+    <input type="radio" name="coding" id="radio"> Comment</input> &nbsp;&nbsp;
+    <input type="radio" name="coding" id="radio"> Question</input> &nbsp;&nbsp;
+    <input type="radio" name="coding" id="radio">Suggestion</input>
+    <br><br>
+
+    <label for=""><b> Your Feedback*</b></label><br>
+    <td><textarea rows="8" cols="50" id="text3"></textarea><br><br>
+
+    <input type="button" onclick="validateForm()" value="Submit" name="" class="btn" id="s">
+    <input type="button" class="btn" name="" id="" value="Reset" onclick="reset()">
+    </form>
+    </div>
+</body>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+           var fname= prompt('enter you fname')
+            alert("you have enter you name as :" + fname);
+            
+            return false;
+        }else{
+            alert("your feedbeek has submited, and thank you for you time");
+            
+        };
+        }
+        function reset(){
+            var lname=document.forms["myFroms"]["lname"].value;
+            var email=document.forms["myForms"]["email"].value;
+            var feedback=document.querySelector("#text3").value;
+            lname="";
+            email="";
+            feedback="";
+        }
+
+</script>
+</html>

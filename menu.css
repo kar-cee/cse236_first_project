@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding:0;
+ box-sizing: border-box;
+}
+:root{
+    --default:#F2AA4CFF;
+    --change:#101820ff;
+    --navbar:#8b8b8b;
+}
+.theme{
+    --default:#101820ff;
+    --change:#F2AA4CFF;
+    --navbar:#585454;
+}
+.header{
+    background-color:var(--default);
+    height: 15vh;
+    position:fixed;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.me{
+font: 2em fantasy;
+    letter-spacing: 1px;
+    color: var(--change);
+}
+.input{
+  outline:none;
+  border:none;
+  border-radius: 30px;
+  background:white;
+  padding:3px 30px 3px 9px;
+  height:25px;
+  width:40vh;
+  font-weight:500;
+  color: black;
+  position:absolute;
+  right: 12vw;
+  transition: all 1s ease-in-out;
+  display: none;
+  animation: animi 1s;
+}
+.search{
+    display: inline;
+}
+.fa{
+    position:absolute;
+    right: 10vw;
+    color:var(--change);
+    cursor: pointer;
+}
+.hover1{
+    position: absolute;
+   top:-110%;
+   left:-140%;
+   opacity: 0;
+   font-size: 10px;
+   color: var(--change);
+}
+.btn:hover .hover1{
+    opacity: 1;
+}
+
+.btn{
+    position: absolute;
+    right:4vw;
+    height:16px;
+    width: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color:var(--change);
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: url("https://images.pexels.com/photos/5836/yellow-metal-design-decoration.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat top;
+    background-size:cover;
+    opacity: .8;
+    transition:all .8s;
+}
+.change.container{
+    background: url("https://images.pexels.com/photos/1242764/pexels-photo-1242764.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat top;
+     background-size:cover;
+}
+.navbar{
+    background-color:var(--navbar);
+    height:100vh;
+    width: 25vw;
+    border-radius: 0 20% 60% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+    top:-100vh;
+    transition: all 1s ease-in-out,background-color 1ms;
+}
+/* all the change class are toggle when clicked on hanburger menu */
+.change{
+    top:0;
+}
+.line{
+    height: 4px;
+    width: 1.3em;
+    background-color:var(--change);
+    border-radius: 3px;
+    margin: 3px;
+    transition: all 1s,background-color .2s;
+}
+.change #line1{
+    transform:rotate(405deg) translate(6px, 4px); 
+    /* translate is 2D shift as mention coordinate */
+}
+.change .hamburger:hover .line{
+    background-color: red;
+}
+.change #line2{
+opacity: 0;
+}
+.change #line3{
+    transform: rotate(-405deg) translate(6px, -4px);
+}
+.hamburger{
+    position: fixed;
+    top:6vh;
+    left:43px;
+    cursor: pointer;
+}
+
+li{
+    list-style: none;
+    margin:17px;
+   
+}
+div img{
+    height: 24vh;
+    width: 15vw;
+    position: relative;
+    top: -3vh;
+    left:7%;
+    /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
+  /* box-shadow: 0px 3px 3px  #131212;   */
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    position: relative;
+    color: rgb(233, 241, 241);  
+    padding:2px 0;
+    font-size: 1em;
+}
+a:hover{
+     color: white;
+}
+a::after,a::before{
+    content: "";
+    background-color: rgb(160, 22, 22);
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    transform: scale(0);
+    transition: .5s;
+    left: 0;
+}
+a::after{
+    bottom: 0;
+transform-origin: right;
+}
+a::before{
+    transform-origin: left;
+    top: 0;
+}
+a:hover::after,
+a:hover::before{
+    transform: scale(1);
+}
+
+.main{
+    height: 50vh;
+    max-width: 40vw;
+    background-color: transparent;
+    position:relative;
+    bottom: -35vh;
+    left:7vw;
+    padding: 10px; 
+    transition: all 1s ease-in-out;
+}
+.change.main{
+    top:14vw;
+    left:60vw;
+}
+h2{
+    font:bolder 2.4em status-bar;
+    
+}
+span{
+    color: turquoise;
+    letter-spacing: 1.2px;
+    font-size: 1.3em;
+}
+.more{
+    border: none;
+    background-color: yellowgreen;
+    padding: 7px;
+    border-radius: 40px;
+    margin-top:25px;
+}
+
+@keyframes animi{
+    0%{
+        width: 0vw;
+    };
+    100%{
+        width: 45vw;
+    };
+}
