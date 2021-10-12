@@ -74,8 +74,8 @@ button:hover{
         <input type="text" id="email" placeholder="Enter Email..." class="email">
       <br>
         <input type="password" placeholder="Enter Password..." id="password" class="password">
-        </form>
-        <button class="btn"><a href="./menu.html" class="a">login</a></button>
+        <button class="btn" type='submit'><a href="./menu.html" class="a">login</a></button>
+       </form>
     </div>
 </div>
 <script>
@@ -92,9 +92,8 @@ button:hover{
         alert("Don't keep any field blank!"); 
         return false;
     }else{
-        link.getAttribute("href");
-        link.setAttribute("href", "./menu.html");
     alert("You are heading home page");
+        documents.forms['myForm'].submit()
 }
 }
 
